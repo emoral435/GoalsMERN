@@ -7,7 +7,7 @@ const User = require("../models/userModel");
 // @access Private
 const getGoals = asyncHandler(async (req, res) => {
   const goals = await Goal.find({ user: req.user.id });
-  res.status(200).json({ goals });
+  res.status(200).json( goals );
 });
 
 // NOTE Set goals
@@ -23,7 +23,7 @@ const setGoal = asyncHandler(async (req, res) => {
     text: req.body.text,
     user: req.user.id,
   });
-  res.status(200).json({ goal });
+  res.status(200).json( goal);
 });
 
 // NOTE Update goal
