@@ -12,10 +12,10 @@ function Login() {
     password: ''
   })
 
-  const { email, password} = formData
+  const { email, password } = formData
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	const {user ,isLoading, isError, isSuccess, msg} = useSelector( (state) => state.auth) 
+	const {user ,isLoading, isError, isSuccess, msg} = useSelector( (state) => state.auth ) 
 
   const onChange = (e) => {
     setFormData((prevState) => ({

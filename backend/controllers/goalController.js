@@ -36,16 +36,14 @@ const updateGoal = asyncHandler(async (req, res) => {
     throw new Error("Goal not found.");
   }
 
-  const user = await User.findById(req.user.id);
-
   // Check for the user existing and having an acc
-  if (!user) {
+  if (!req.user) {
     res.status(400);
     throw new Error("User not found.");
   }
 
   // Check if the user matches the goal user
-  if (goal.user.toString() !== user.id) {
+  if (goal.user.toString() !== req.user.id) {
     res.status(400);
     throw new Error("You are not the owner of this goal.");
   }
@@ -67,16 +65,14 @@ const deleteGoal = asyncHandler(async (req, res) => {
     throw new Error("Goal not found.");
   }
 
-  const user = await User.findById(req.user.id);
-
   // Check for the user existing and having an acc
-  if (!user) {
+  if (!req.user) {
     res.status(400);
     throw new Error("User not found.");
   }
 
   // Check if the user matches the goal user
-  if (goal.user.toString() !== user.id) {
+  if (goal.user.toString() !== req.user.id) {
     res.status(400);
     throw new Error("You are not the owner of this goal.");
   }
