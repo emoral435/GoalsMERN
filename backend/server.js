@@ -6,6 +6,7 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const port = process.env.PORT || 5000;
 
+// Connecting to the MONGODB database
 connectDB();
 
 const app = express();
